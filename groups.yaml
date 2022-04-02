@@ -1,270 +1,271 @@
-  shutup:
-    name: Toggle stuff on watch
-    entities:
-      - input_boolean.intrusion
-      - input_boolean.pause_vacuum
-      - input_boolean.turn_fans_on_upstairs
-      - switch.office_lights
-      - input_boolean.unjoin_bathroom_sonos
-      - input_boolean.office_sonos_join
-      - input_boolean.outside_sonos_join
-      - input_boolean.family_room_sonos_join
-      - input_boolean.tstat_upstairs_off
-      - switch.family_room_fan
-      - switch.master_bed_fan
-      - input_boolean.leak
-      - input_boolean.fire_or_smoke
-  all_doors:
-    name: All Doors
-    icon: mdi:door
-    entities:
-      - binary_sensor.sensor_front_door
-      - binary_sensor.sensor_deck_north_doors
-      - binary_sensor.sensor_deck_north_doors
-      - binary_sensor.sensor_deck_south_doors
-      - binary_sensor.sensor_parlor_sliding_doors
-      - binary_sensor.sensor_family_room_doors
-      - binary_sensor.garage_side_door_contact_sensor
-      - binary_sensor.garage_door_tilt_sensor_any
-      - binary_sensor.hot_tub_cover_access_control_window_door_is_open
-  office_motion:
-    name: Office Motion
-    icon: mdi:motion-sensor
-    entities:
-      - media_player.mark_s_office
-      - binary_sensor.office_motion_mark_pc
-      - binary_sensor.motion_office_motion_detection      
-  family_room_motion:
-    name: Family Room Motion
-    icon: mdi:motion-sensor
-    entities:
-      - media_player.tv_family_room
-      - binary_sensor.family_room_is_people    
-  main_motion:
-    name: Main Level Motion
-    icon: mdi:motion-sensor
-    entities:
-      - binary_sensor.motion_dining_room_any
-      - binary_sensor.parlor_motion
-      - group.office_motion
-      - group.family_room_motion
-      - binary_sensor.kitchen_is_people
-  basement_main_area_motion:
-    name: Basement Main Area Motion
-    icon: mdi:motion-sensor
-    entities:
-      - binary_sensor.basement_motion
-      - binary_sensor.basement_rec_area_sensor_home_security_motion_detection
-      - binary_sensor.ping_tv_samsung_basement
-      - sensor.basement_roku_presence
-  basement_inside_motion:
-    name: Basement Level Inside Motion
-    icon: mdi:motion-sensor
-    entities:
-      - group.basement_main_area_motion
-      - media_player.tv_workout
-  garage_motion:
-    name: Garage Motion
-    icon: mdi:motion-sensor
-    entities:
-      - binary_sensor.garage_is_people
-      - binary_sensor.garage_motion
-      - binary_sensor.garage_side_door_contact_sensor
-      - binary_sensor.garage_door_tilt_sensor_any       
-  basement_motion:
-    name: Basement Level Motion
-    icon: mdi:motion-sensor
-    entities:
-      - group.basement_inside_motion
-      - group.garage_motion      
-  main_basement_motion:
-    name: Main and Basement Level Motion
-    icon: mdi:motion-sensor
-    entities:
-      - group.main_motion
-      - group.basement_motion
-  kitchen_family_motion:
-    name: Kitchen and Family Room motion
-    icon: mdi:motion-sensor
-    entities:
-      - group.family_room_motion
-      - binary_sensor.kitchen_is_people
-  playroom_motion:
-    name: Playroom Motion
-    icon: mdi:motion-sensor
-    entities:
-      - binary_sensor.playroom_motion
-      - binary_sensor.playroom_motion_jonathan_pc      
-  upstairs_motion:
-    name: Upstairs Level Motion
-    icon: mdi:motion-sensor
-    entities:
-      - group.playroom_motion
-      - binary_sensor.motion_lady_grantham
-      - binary_sensor.top_floor_hallway_motion_ias_zone
-      - binary_sensor.master_bed_motion_ias_zone
-  deck_motion:
-    name: Deck Motion
-    icon: mdi:motion-sensor
-    entities:
-      - binary_sensor.motion_deck_motion_detection_2
-      - binary_sensor.deck_is_people
-  all_kitchen_lights:
-    name: All Kitchen Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - switch.kitchen_lights
-      - switch.kitchen_island_lights
-      - switch.kitchen_cabinet_lights
-  family_room_torchierre:
-    name: Family Room Torchierre
-    icon: mdi:floor-lamp-torchiere
-    entities:
-      - light.light_family_room_left_top_1
-      - light.light_family_room_left_top_2
-  family_room_ambient_lighting:
-    name: Family Room Ambient Lighting
-    icon: mdi:lightbulb-group
-    entities:
-      - group.family_room_torchierre
-      - light.light_family_room_right
-  all_parlor_lights:
-    name: All Parlor Lights
-    icon: mdi:lightbulb-group
-    entities: 
-      - light.lights_parlor_corner_on_off
-      - switch.parlor_lights
-  all_family_room_lights:
-    name: All Family Room Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - group.family_room_ambient_lighting
-      - switch.family_room_lights
-  all_dining_room_lights:
-    name: All Dining Room Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - switch.dining_room_lights
-      - light.lights_dining_room_window_on_off
-      - switch.dining_room_chandelier
-      - switch.dining_room_sconces
-  front_porch_lights:
-    name: Front Porch Lights
-    icon: mdi:light-recessed
-    entities:
-      - light.light_front_porch_1
-      - light.light_front_porch_2
-  outdoor_lights:
-    name: Outdoor Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - group.front_porch_lights
-      - switch.patio_pathway_lights
-      - switch.patio_house_lights
-      - switch.patio_string_lights
-      - switch.deck_outlet
-      - switch.deck_house_lights
-      - switch.driveway_lights
-      - light.deck_floodlight
-      - light.northside_floodlight
-      - light.under_deck_floodlight
-  all_outdoor_lights:
-    name: All Outdoor Lights
-    icon: mdi:lightbulb-group
-    entities: 
-      group.outdoor_lights   
-  all_master_bath_lights:
-    name: All Master Bath Lights
-    icon: mdi:light-recessed
-    entities:
-      - switch.master_bath_rear_lights
-      - light.master_bath_lights
-  all_top_floor_lights:
-    name: All Top Floor Lights
-    icon: mdi:light-recessed
-    entities:
-      - switch.master_bath_rear_lights
-      - light.master_bath_lights
-      - switch.master_bed_lights
-      - switch.top_floor_hallway_lights
-      - switch.top_stairway_lights
-      - switch.top_floor_hallway_sconces
-      - switch.liam_bedroom_light
-      - switch.spare_bedroom_light
-  top_floor_lights:
-    name: Top Floor Lights
-    icon: mdi:light-recessed
-    entities:
-      group.all_top_floor_lights      
-  main_floor_ceiling_lights:
-    name: Main Floor Ceiling Lights
-    icon: mdi:light-recessed
-    entities:
-      - group.kitchen_lights
-      - switch.homework_area_lights
-      - switch.family_room_lights
-      - switch.entryway_lights
-      - switch.office_lights
-      - switch.parlor_lights
-      - switch.dining_room_lights
-  main_floor_ambient_lighting:
-    name: Main Floor Ambient Lighting
-    icon: mdi:lightbulb-group
-    entities:
-      - light.lights_dining_room_window_on_off
-      - group.family_room_ambient_lighting
-      - switch.kitchen_cabinet_lights
-      - light.lights_parlor_corner_on_off
-  all_main_floor_lights:
-    name: All Main Floor Lights
-    icon: mdi:light-recessed
-    entities:
-      - switch.kitchen_lights
-      - switch.kitchen_island_lights
-      - switch.kitchen_cabinet_lights
-      - switch.homework_area_lights
-      - switch.family_room_lights
-      - switch.entryway_lights
-      - switch.office_lights
-      - switch.parlor_lights
-      - switch.dining_room_lights
-      - light.lights_dining_room_window_on_off
-      - group.family_room_torchierre
-      - light.light_family_room_right
-      - switch.kitchen_cabinet_lights
-      - light.lights_parlor_corner_on_off
-  basement_main_area_lights:
-    name: Basement Main Area Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - switch.basement_stairway_lights
-      - switch.basement_hallway_lights
-      - switch.basement_rec_area_lights
-      - switch.basement_tv_area_lights
-      - light.basement_couch_light
-  all_basement_lights:
-    name: All Basement Lights
-    icon: mdi:light-recessed
-    entities:
-      - switch.basement_stairway_lights
-      - switch.basement_hallway_lights
-      - switch.basement_rec_area_lights
-      - switch.basement_tv_area_lights
-      - light.basement_couch_light
-      - switch.mudroom_lights
-      - switch.garage_lights
-      - switch.workout_room_lights
-      - switch.basement_bedroom_lights
-  all_indoor_lights:
-    name: All Indoor Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - group.all_top_floor_lights
-      - group.main_floor_lights
-      - group.all_basement_lights
-  all_lights:
-    name: All Lights
-    icon: mdi:lightbulb-group
-    entities:
-      - group.all_outdoor_lights
-      - group.all_indoor_lights
+shutup:
+  name: Toggle stuff on watch
+  entities:
+    - input_boolean.intrusion
+    - input_boolean.pause_vacuum
+    - input_boolean.turn_fans_on_upstairs
+    - switch.office_lights
+    - input_boolean.unjoin_bathroom_sonos
+    - input_boolean.office_sonos_join
+    - input_boolean.outside_sonos_join
+    - input_boolean.family_room_sonos_join
+    - input_boolean.tstat_upstairs_off
+    - switch.family_room_fan
+    - switch.master_bed_fan
+    - input_boolean.leak
+    - input_boolean.fire_or_smoke
+all_doors:
+  name: All Doors
+  icon: mdi:door
+  entities:
+    - binary_sensor.sensor_front_door
+    - binary_sensor.sensor_deck_north_doors
+    - binary_sensor.sensor_deck_north_doors
+    - binary_sensor.sensor_deck_south_doors
+    - binary_sensor.sensor_parlor_sliding_doors
+    - binary_sensor.sensor_family_room_doors
+    - binary_sensor.garage_side_door_contact_sensor
+    - binary_sensor.garage_door_tilt_sensor_any
+    - binary_sensor.hot_tub_cover_access_control_window_door_is_open
+office_motion:
+  name: Office Motion
+  icon: mdi:motion-sensor
+  entities:
+    - media_player.mark_s_office
+    - binary_sensor.office_motion_mark_pc
+    - binary_sensor.motion_office_motion_detection
+family_room_motion:
+  name: Family Room Motion
+  icon: mdi:motion-sensor
+  entities:
+    - media_player.tv_family_room
+    - binary_sensor.family_room_is_people
+main_motion:
+  name: Main Level Motion
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.motion_dining_room_any
+    - binary_sensor.parlor_motion
+    - group.office_motion
+    - group.family_room_motion
+    - binary_sensor.kitchen_is_people
+basement_main_area_motion:
+  name: Basement Main Area Motion
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.basement_motion
+    - binary_sensor.basement_rec_area_sensor_home_security_motion_detection
+    - binary_sensor.ping_tv_samsung_basement
+    - sensor.basement_roku_presence
+basement_inside_motion:
+  name: Basement Level Inside Motion
+  icon: mdi:motion-sensor
+  entities:
+    - group.basement_main_area_motion
+    - media_player.tv_workout
+garage_motion:
+  name: Garage Motion
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.garage_is_people
+    - binary_sensor.garage_motion
+    - binary_sensor.garage_side_door_contact_sensor
+    - binary_sensor.garage_door_tilt_sensor_any
+basement_motion:
+  name: Basement Level Motion
+  icon: mdi:motion-sensor
+  entities:
+    - group.basement_inside_motion
+    - group.garage_motion
+main_basement_motion:
+  name: Main and Basement Level Motion
+  icon: mdi:motion-sensor
+  entities:
+    - group.main_motion
+    - group.basement_motion
+kitchen_family_motion:
+  name: Kitchen and Family Room motion
+  icon: mdi:motion-sensor
+  entities:
+    - group.family_room_motion
+    - binary_sensor.kitchen_is_people
+playroom_motion:
+  name: Playroom Motion
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.playroom_motion
+    - binary_sensor.playroom_motion_jonathan_pc
+upstairs_motion:
+  name: Upstairs Level Motion
+  icon: mdi:motion-sensor
+  entities:
+    - group.playroom_motion
+    - binary_sensor.motion_lady_grantham
+    - binary_sensor.top_floor_hallway_motion_ias_zone
+    - binary_sensor.master_bed_motion_ias_zone
+deck_motion:
+  name: Deck Motion
+  icon: mdi:motion-sensor
+  entities:
+    - binary_sensor.motion_deck_motion_detection_2
+    - binary_sensor.deck_is_people
+all_kitchen_lights:
+  name: All Kitchen Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - switch.kitchen_lights
+    - switch.kitchen_island_lights
+    - switch.kitchen_cabinet_lights
+family_room_torchierre:
+  name: Family Room Torchierre
+  icon: mdi:floor-lamp-torchiere
+  entities:
+    - light.light_family_room_left_top_1
+    - light.light_family_room_left_top_2
+family_room_ambient_lighting:
+  name: Family Room Ambient Lighting
+  icon: mdi:lightbulb-group
+  entities:
+    - group.family_room_torchierre
+    - light.light_family_room_right
+all_parlor_lights:
+  name: All Parlor Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - light.lights_parlor_corner_on_off
+    - switch.parlor_lights
+all_family_room_lights:
+  name: All Family Room Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - group.family_room_ambient_lighting
+    - switch.family_room_lights
+all_dining_room_lights:
+  name: All Dining Room Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - switch.dining_room_lights
+    - light.lights_dining_room_window_on_off
+    - switch.dining_room_chandelier
+    - switch.dining_room_sconces
+front_porch_lights:
+  name: Front Porch Lights
+  icon: mdi:light-recessed
+  entities:
+    - light.light_front_porch_1
+    - light.light_front_porch_2
+outdoor_lights:
+  name: Outdoor Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - group.front_porch_lights
+    - switch.patio_pathway_lights
+    - switch.patio_house_lights
+    - switch.patio_string_lights
+    - switch.deck_outlet
+    - switch.deck_house_lights
+    - switch.driveway_lights
+    - light.deck_floodlight
+    - light.northside_floodlight
+    - light.under_deck_floodlight
+all_outdoor_lights:
+  name: All Outdoor Lights
+  icon: mdi:lightbulb-group
+  entities: group.outdoor_lights
+all_master_bath_lights:
+  name: All Master Bath Lights
+  icon: mdi:light-recessed
+  entities:
+    - switch.master_bath_rear_lights
+    - light.master_bath_lights
+all_top_floor_lights:
+  name: All Top Floor Lights
+  icon: mdi:light-recessed
+  entities:
+    - switch.master_bath_rear_lights
+    - light.master_bath_lights
+    - switch.master_bed_lights
+    - switch.top_floor_hallway_lights
+    - switch.top_stairway_lights
+    - switch.top_floor_hallway_sconces
+    - switch.liam_bedroom_light
+    - switch.spare_bedroom_light
+top_floor_lights:
+  name: Top Floor Lights
+  icon: mdi:light-recessed
+  entities: group.all_top_floor_lights
+main_floor_ceiling_lights:
+  name: Main Floor Ceiling Lights
+  icon: mdi:light-recessed
+  entities:
+    - group.kitchen_lights
+    - switch.homework_area_lights
+    - switch.family_room_lights
+    - switch.entryway_lights
+    - switch.office_lights
+    - switch.parlor_lights
+    - switch.dining_room_lights
+main_floor_ambient_lighting:
+  name: Main Floor Ambient Lighting
+  icon: mdi:lightbulb-group
+  entities:
+    - light.lights_dining_room_window_on_off
+    - group.family_room_ambient_lighting
+    - switch.kitchen_cabinet_lights
+    - light.lights_parlor_corner_on_off
+    - switch.dining_room_sconces
+all_main_floor_lights:
+  name: All Main Floor Lights
+  icon: mdi:light-recessed
+  entities:
+    - switch.kitchen_lights
+    - switch.kitchen_island_lights
+    - switch.kitchen_cabinet_lights
+    - switch.homework_area_lights
+    - switch.family_room_lights
+    - switch.entryway_lights
+    - switch.office_lights
+    - switch.parlor_lights
+    - switch.dining_room_lights
+    - switch.dining_room_chandelier
+    - switch.dining_room_sconces
+    - light.lights_dining_room_window_on_off
+    - group.family_room_torchierre
+    - light.light_family_room_right
+    - switch.kitchen_cabinet_lights
+    - light.lights_parlor_corner_on_off
+basement_main_area_lights:
+  name: Basement Main Area Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - switch.basement_stairway_lights
+    - switch.basement_hallway_lights
+    - switch.basement_rec_area_lights
+    - switch.basement_tv_area_lights
+    - light.basement_couch_light
+all_basement_lights:
+  name: All Basement Lights
+  icon: mdi:light-recessed
+  entities:
+    - switch.basement_stairway_lights
+    - switch.basement_hallway_lights
+    - switch.basement_rec_area_lights
+    - switch.basement_tv_area_lights
+    - light.basement_couch_light
+    - switch.mudroom_lights
+    - switch.garage_lights
+    - switch.workout_room_lights
+    - switch.basement_bedroom_lights
+all_indoor_lights:
+  name: All Indoor Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - group.all_top_floor_lights
+    - group.main_floor_lights
+    - group.all_basement_lights
+all_lights:
+  name: All Lights
+  icon: mdi:lightbulb-group
+  entities:
+    - group.all_outdoor_lights
+    - group.all_indoor_lights
